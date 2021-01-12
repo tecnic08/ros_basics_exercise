@@ -1,0 +1,10 @@
+<launch>
+
+    <arg name="ns" default="/" />
+    <arg name="is_simu" default="true" />
+    <param name="is_simu" value="$(arg is_simu)" />
+    <group ns="$(arg ns)">
+        <node name="thymio_control_node" pkg="ros_basics_solution" type="thymio_control_node" output="screen"/>
+    </group>
+
+</launch>

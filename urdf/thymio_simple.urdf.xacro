@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="https://www.ros.org/wiki/xacro" name="thymio">
+
+    <xacro:include filename="$(find ros_basics_models)/urdf/utils/inertia.xacro" />
+    <xacro:include filename="$(find ros_basics_models)/urdf/utils/materials.xacro" />
+    <xacro:include filename="$(find ros_basics_models)/urdf/utils/custom_sensors.xacro" />
+    <xacro:include filename="$(find ros_basics_exercise)/urdf/thymio_simple.gazebo" />
+
+    <xacro:arg name="left_wheel_mu" default="100.0"/>
+    <xacro:property name="left_wheel_mu_p" value="$(arg left_wheel_mu)"/>
+    <xacro:arg name="right_wheel_mu" default="100.0"/>
+    <xacro:property name="right_wheel_mu_p" value="$(arg right_wheel_mu)"/>
+    <xacro:property name="wheel_radius" value="0.022"/>
+    <xacro:property name="wheel_len" value="0.015"/>
+    <xacro:arg name="mass" default="0.270"/>
+    <xacro:property name="mass_p" value="$(arg mass)"/>
+    <xacro:property name="body_mass" value="${mass_p * 0.80}"/>
+    <xacro:property name="wheel_mass" value="${mass_p * 0.10}"/>
+
+    <link name="base_link">
+        <visual>
+            <origin xyz="0 0 0"/>
+            <geometry>
+                <box size="0.11 0.112 0.045"/>
+            </geometry>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0"/>
+            <geometry>
+                <box size="0.11 0.112 0.045"/>
+            </geometry>
+            <material name="white"/>
+        </collision>
+
+        <!-- Implement the caster wheel -->
+    </link>
+
+    <!-- Implement the left wheel -->
+    <!-- Implement the joint for the left wheel -->
+
+    <!-- Implement the right wheel -->
+    <!-- Implement the joint for the right wheel -->
+
+    <!-- Add your sensors using the macro -->
+</robot>
