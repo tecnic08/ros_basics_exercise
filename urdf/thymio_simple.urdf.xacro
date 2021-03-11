@@ -52,15 +52,16 @@
         </collision>
     </link>
 
-    <joint name="right_joint" type="continuous">
+    <!-- Implement the right wheel -->
+    <!-- Implement the joint for the right wheel -->
+
+    <joint name="right_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="right_wheel_link"/>
         <axis rpy="0 0 0" xyz="0 1 0"/>
         <origin xyz="0.05 -0.02 0.01"/>
     </joint>
 
-    <!-- Implement the left wheel -->
-    <!-- Implement the joint for the left wheel -->
     <link name="right_wheel_link">
         <visual>
             <origin xyz="0 0 0" rpy="1.57 0 1.57"/>
@@ -81,7 +82,9 @@
         </inertial>
     </link>
 
-    <joint name="left_joint" type="continuous">
+    <!-- Implement the left wheel -->
+    <!-- Implement the joint for the left wheel -->
+    <joint name="left_wheel_joint" type="continuous">
         <parent link="base_link"/>
         <child link="left_wheel_link"/>
         <axis rpy="0 0 0" xyz="0 1 0"/>
@@ -107,9 +110,6 @@
             <xacro:cylinder_inertia mass="0.08" h="0.01" r="0.02"/>
         </inertial>
     </link>
-
-    <!-- Implement the right wheel -->
-    <!-- Implement the joint for the right wheel -->
 
     <!-- Add your sensors using the macro -->
 
