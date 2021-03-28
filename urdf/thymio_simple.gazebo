@@ -21,36 +21,6 @@
         <material>Gazebo/White</material>
     </gazebo>
 
-    <!-- Sensor definitions for the simple Thymio -->
-    <gazebo reference="sensor_left"> <!-- Don't forget to add a right sensor too ! (at least) -->
-        <sensor type="ray" name="laser_left">
-            <pose>0.05 0 0 0 0 -1.57</pose>
-            <ray>
-                <scan>
-                    <horizontal>
-                        <samples>XYZ</samples>
-                        <resolution>XYZ</resolution>
-                        <min_angle>XYZ</min_angle>
-                        <max_angle>XYZ</max_angle>
-                    </horizontal>
-                </scan>
-                <range>
-                    <min>0.0005</min>
-                    <max>0.04</max>
-                    <resolution>0.0001</resolution>
-                </range>
-            </ray>
-            <plugin name="laser" filename="libgazebo_ros_laser.so">
-                <topicName>thymio_laser_left/scan</topicName>
-                <frameName>sensor_left</frameName>
-            </plugin>
-            <always_on>1</always_on>
-            <update_rate>10</update_rate>
-            <visualize>true</visualize>
-        </sensor>
-    </gazebo>
-
-
     <!-- Diff drive -->
     <gazebo>
         <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
